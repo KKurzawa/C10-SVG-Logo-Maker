@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 let elShape = "Test 3";
-const shapesJs = require('./lib/shapes');
+const { Square } = require('./lib/shapes');
+const { Circle } = require('./lib/shapes');
 // const renderShapes = require('./lib/shapes');
 // function generateShape(data) {
 //     console.log(`${data.characters}`)
@@ -9,12 +10,13 @@ const shapesJs = require('./lib/shapes');
 let shapeType = 'shape';
 let yourShape = "";
 
-function renderShapes(data) {
-    if (shapeType === 'Circle') {
-        yourShape = [cx = "25", cy = "75", r = "20"];
-    }
-    return yourShape
-}
+
+// function renderShapes(data) {
+//     if (shapeType === 'Circle') {
+//         yourShape = [cx = "25", cy = "75", r = "20"];
+//     }
+//     return yourShape
+// }
 
 inquirer
     .prompt([
@@ -48,19 +50,28 @@ inquirer
     //     return shapesJs(renderShapes());
     // })
     .then((response) => {
-        fs.writeFile('./examples/logo.svg', JSON.stringify(response), (error) => {
-            if (error) {
-                console.error(error);
-            }
-        })
-
+        if (response.shape === 'Square') {
+            const square = new Square(response.characters, response.shapeColor, response.textColor)
+            fs.writeFile('./examples/logo.svg', square.render(), (error) => {
+                if (error) {
+                    console.error(error);
+                }
+            })
+        } else (response.shape === 'Circle'); {
+            const circle = new Circle(response.characters, response.shapeColor, response.textColor)
+            fs.writeFile('./examples/logo.svg', circle.render(), (error) => {
+                if (error) {
+                    console.error(error);
+                }
+            })
+        }
     })
     .then(() => {
         return console.log("Generated logo.svg")
     })
-    .then(() => {
-        renderShapes();
-    })
+    // .then(() => {
+    //     renderShapes();
+    // })
     // .then((text) => {
     //     console.log(yourShape);
     // })
