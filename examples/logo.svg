@@ -1,7 +1,7 @@
-<svg version="1.1" width="300" height="200">
+<svg version="1.1" width="300" height="200" viewBox="0, 0, 100, 100">
 
-        <circle cx="150" cy="100" r="80" style="fill:green" />
+        <rect width="400" height="400" style="fill:red" />
 
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text> 
+        <text x="62" y="62" font-size="50" text-anchor="middle" fill="black">RRR</text> 
         
       </svg>
