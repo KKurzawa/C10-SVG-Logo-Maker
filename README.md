@@ -3,8 +3,11 @@
 
 ## Description
 
+This is a command line application that generates a professional SVG logo.  Logo's are an important piece of any business and graphic designer can be quite expensive.  This application allows an individual to design and generate a logo for free.  This project introduced me to SVG's and tests using Jest.
 
 ## Usage
+
+
 
 Walkthrough Video: 
 
