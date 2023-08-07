@@ -1,22 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-let elShape = "Test 3";
-const { Square } = require('./lib/shapes');
-const { Circle } = require('./lib/shapes');
-// const renderShapes = require('./lib/shapes');
-// function generateShape(data) {
-//     console.log(`${data.characters}`)
-// }
-let shapeType = 'shape';
-let yourShape = "";
-
-
-// function renderShapes(data) {
-//     if (shapeType === 'Circle') {
-//         yourShape = [cx = "25", cy = "75", r = "20"];
-//     }
-//     return yourShape
-// }
+const { Square } = require('./lib/square.js');
+const { Circle } = require('./lib/circle.js');
+const { Triangle } = require('./lib/triangle.js');
 
 inquirer
     .prompt([
@@ -34,9 +20,9 @@ inquirer
             type: 'rawlist',
             message: 'Choose a shape from the list below.',
             choices: [
+                { name: 'Square', value: 'Square' },
                 { name: 'Circle', value: 'Circle' },
                 { name: 'Triangle', value: 'Triangle' },
-                { name: 'Square', value: 'Square' },
             ],
             name: 'shape',
         },
@@ -46,9 +32,6 @@ inquirer
             name: 'shapeColor',
         },
     ])
-    // .then((response) => {
-    //     return shapesJs(renderShapes());
-    // })
     .then((response) => {
         if (response.shape === 'Square') {
             const square = new Square(response.characters, response.shapeColor, response.textColor)
@@ -56,10 +39,17 @@ inquirer
                 if (error) {
                     console.error(error);
                 }
-            })
-        } else (response.shape === 'Circle'); {
+            });
+        } else if (response.shape === 'Circle') {
             const circle = new Circle(response.characters, response.shapeColor, response.textColor)
             fs.writeFile('./examples/logo.svg', circle.render(), (error) => {
+                if (error) {
+                    console.error(error);
+                }
+            })
+        } else {
+            const triangle = new Triangle(response.characters, response.shapeColor, response.textColor)
+            fs.writeFile('./examples/logo.svg', triangle.render(), (error) => {
                 if (error) {
                     console.error(error);
                 }
@@ -69,9 +59,3 @@ inquirer
     .then(() => {
         return console.log("Generated logo.svg")
     })
-    // .then(() => {
-    //     renderShapes();
-    // })
-    // .then((text) => {
-    //     console.log(yourShape);
-    // })
