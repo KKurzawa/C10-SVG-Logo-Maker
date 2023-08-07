@@ -12,7 +12,7 @@ Walkthrough Video:
 
 Github Repository: https://github.com/KKurzawa/C10-SVG-Logo-Maker
 
-Sample SVG: 
+Sample SVG: https://github.com/KKurzawa/C10-SVG-Logo-Maker/blob/main/examples/logo.svg
 
 ## Credits
 
