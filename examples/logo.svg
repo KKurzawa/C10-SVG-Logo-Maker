@@ -1,7 +1,7 @@
-<svg version="1.1" width="300" height="200" viewBox="0, 0, 100, 100">
+<svg version="1.1" width="300" height="200">
 
-        <rect width="400" height="400" style="fill:red" />
+        <polygon points="200,50 70,275 330,275" style="fill:red" />
 
-        <text x="62" y="62" font-size="50" text-anchor="middle" fill="black">RRR</text> 
+        <text x="200" y="165" font-size="45" text-anchor="middle" fill="Blue">TTT</text> 
         
-      </svg>
+        </svg>
