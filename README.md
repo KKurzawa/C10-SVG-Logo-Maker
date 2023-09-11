@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-# C10 SVG Logo Maker
+# SVG Logo Maker
 
 ## Description
 
