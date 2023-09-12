@@ -10,7 +10,7 @@ Enter node index.js in the command line.  You will then be asked to enter 3 char
 
 Walkthrough Video: https://watch.screencastify.com/v/AwiCACz7d2XtFt1lHhIw
 
-Github Repository: https://github.com/KKurzawa/C10-SVG-Logo-Maker
+Github Repository: https://github.com/KKurzawa/SVG-Logo-Maker
 
 Sample SVG: https://github.com/KKurzawa/C10-SVG-Logo-Maker/blob/main/examples/logo.svg
 
